@@ -1,8 +1,8 @@
 // We've provided `makeHorse` and `makeFlyingHorse` for you, written using the
 // functional pattern. Your task is to rewrite these classes to use the
-// pseudoclassical pattern. They should have all the same methods as the 
-// objects returned from the maker functions except in pseudo classical style. 
-// You must be able to use your new functions to create new horse instances, 
+// pseudoclassical pattern. They should have all the same methods as the
+// objects returned from the maker functions except in pseudo classical style.
+// You must be able to use your new functions to create new horse instances,
 // just like this:
 //
 //   var myHorse = new Horse();
@@ -39,11 +39,34 @@ var makeFlyingHorse = function(name, color) {
 // Here's some starter code to get you going!
 
 var Horse = function(name) {
+  this.name = name;
+
 };
 
-
+Horse.prototype.goSomewhere = function(destination){
+  return this.name + ' is galloping to ' + destination + '!';
+};
 
 var FlyingHorse = function(name, color) {
+  Horse.call(this, name);
+  this.color = color;
 };
 
+FlyingHorse.prototype = Object.create(Horse.prototype);
+FlyingHorse.constructor = FlyingHorse;
+FlyingHorse.prototype.goSomewhere = function(destination, milesToDestination){
+  if(milesToDestination<10){
+    return Horse.prototype.goSomewhere.call(this, destination);
+  } else {
+    return this.name + ' is flying to ' + destination + '!';
+  }
+};
 
+  var myHorse = new Horse('wonbok');
+  console.log(myHorse.goSomewhere('home'));
+
+  var myFlyingHorse = new FlyingHorse('yesol', 'red');
+  console.log(myFlyingHorse);
+  console.log(myFlyingHorse.color);
+  console.log(myFlyingHorse.goSomewhere('home', 11));
+  console.log(myFlyingHorse.goSomewhere('home', 8));

@@ -13,14 +13,14 @@ var TimeComplexity = {
 };
 
 
-var sortedIndexOfTimeComplexity =  TimeComplexity.FIX_ME; // TODO: Update this constant
+var sortedIndexOfTimeComplexity =  TimeComplexity.Linear; // TODO: Update this constant
 
 var sortedIndexOf = function(array, targetElement) {
   var minIndex = 0;
   var maxIndex = array.length - 1;
   var currentIndex;
   var currentElement;
- 
+
   while (minIndex <= maxIndex) {
     currentIndex = Math.floor((minIndex + maxIndex) / 2);
     currentElement = array[currentIndex];
@@ -33,12 +33,12 @@ var sortedIndexOf = function(array, targetElement) {
       return currentIndex;
     }
   }
- 
+
   return -1;
 };
 
 
-var findDuplicatesTimeComplexity =  TimeComplexity.FIX_ME; // TODO: Update this constant
+var findDuplicatesTimeComplexity =  TimeComplexity.linear; // TODO: Update this constant
 
 var findDuplicates = function(string) {
   var tracker = {};
@@ -91,7 +91,7 @@ var hasDuplicates = function(array) {
 
 
 
-var removeLastThreeElementsTimeComplexity =  TimeComplexity.FIX_ME; // TODO: Update this constant
+var removeLastThreeElementsTimeComplexity =  TimeComplexity.CONSTANT; // TODO: Update this constant
 
 var removeLastThreeElements = function(array) {
   var numberOfElementsToRemove = 3;
@@ -102,16 +102,17 @@ var removeLastThreeElements = function(array) {
 };
 
 
-var increasingStepTimeComplexity =  TimeComplexity.FIX_ME; // TODO: Update this constant
+var increasingStepTimeComplexity =  TimeComplexity.QUADRATIC; // TODO: Update this constant
 
 var increasingStep = function(number) {
   for (var i = 1; i < number; i = i * 2) {
-    console.log(i);
+    console.log('i', i);
   }
 };
+// console.log(increasingStep(16));
 
 
-var makeRangeTimeComplexity =  TimeComplexity.FIX_ME; // TODO: Update this constant
+var makeRangeTimeComplexity =  TimeComplexity.EXPONENTIAL; // TODO: Update this constant
 
 var makeRange = function(array) {
   array.forEach(function(item) {
@@ -121,3 +122,4 @@ var makeRange = function(array) {
   });
 };
 
+console.log(makeRange([1,2,3,4]));
