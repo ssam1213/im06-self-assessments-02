@@ -57,7 +57,7 @@ var findDuplicates = function(string) {
 };
 
 
-var bruteForcePasswordTimeComplexity =  TimeComplexity.FIX_ME; // TODO: Update this constant
+var bruteForcePasswordTimeComplexity =  TimeComplexity.LINEAR; // TODO: Update this constant
 
 var bruteForcePassword = function(max) {
   var alphabet = 'abcdefghijklmnopqrstuvwxyz';
@@ -77,7 +77,7 @@ var bruteForcePassword = function(max) {
 };
 
 
-var hasDuplicatesTimeComplexity =  TimeComplexity.FIX_ME; // TODO: Update this constant
+var hasDuplicatesTimeComplexity =  TimeComplexity.LOGARITHMIC; // TODO: Update this constant
 
 var hasDuplicates = function(array) {
   for (var i = 0; i < array.length; i++) {
